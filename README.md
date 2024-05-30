@@ -51,6 +51,8 @@ These groups may have varying levels of marketing experience, regardless of whet
     - express
     - mongoose for MongoDB
     - bcrypt for password hashing
+- Deployment: 
+    - Vercel/ Heroku/ Render
 
 ### APIs
 
