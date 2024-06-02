@@ -1,0 +1,132 @@
+@use "../src/styles/partials/variables.scss" as *;
+@use "../src/styles/partials/mixins.scss" as *;
+@use "../src/styles/partials/typography.scss" as *;
+
+body {
+  font-family: $primary-font;
+  margin: 0;
+  padding: 0;
+  background-color: $primary-color;
+  color: $text-color;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: $padding-base;
+
+  &__container {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $padding-base;
+
+    &-logo {
+      max-width: 150px;
+    }
+
+    &-nav {
+      &-list {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        &-item {
+          margin: 0 $margin-base;
+          font-size: $font-size-base;
+        }
+      }
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $padding-base;
+  }
+
+  &__welcome {
+    &__title {
+      font-size: $font-size-xl;
+      font-family: $header-font;
+    }
+
+    &__subtitle {
+      font-size: $font-size-lg;
+    }
+
+    &__auth-options {
+      margin: $margin-base 0;
+
+      &-google-auth, &-email-auth {
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        padding: $padding-base;
+        border: none;
+        border-radius: $border-radius;
+        background-color: $accent-color;
+        font-size: $font-size-base;
+        margin: $margin-base 0;
+      }
+
+      &-divider {
+        margin: $margin-base 0;
+      }
+
+      &-email-input {
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        padding: $padding-base;
+        margin: $margin-base 0;
+        border: 1px solid $accent-color;
+        border-radius: $border-radius;
+      }
+    }
+
+    &__terms {
+      font-size: $font-size-base;
+    }
+  }
+
+  &__preview {
+    margin-top: $margin-base;
+
+    &-image {
+      max-width: 100%;
+      border-radius: $border-radius;
+    }
+  }
+}
+
+@include media(min-width: $tablet-breakpoint) {
+  .app {
+    &__main {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &__welcome, &__preview {
+      width: 48%;
+    }
+  }
+}
+
+@include media(min-width: $desktop-breakpoint) {
+  .app {
+    &__container {
+      padding: $padding-base * 2;
+    }
+  }
+}
