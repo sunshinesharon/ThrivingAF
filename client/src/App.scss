@@ -1,6 +1,7 @@
 @import './styles/variables';
 
 .app {
+  padding-top: 60px; // Adjust according to the height of the header
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,75 +9,113 @@
   min-height: 100vh;
   background-color: $primary-color;
   padding: $padding-base;
-}
 
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 
-  .text-section {
+    @media (min-width: 760px) {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      text-align: left;
+    }
+
+    @media (min-width: 1280px) {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  }
+
+  &__text-section {
     margin-bottom: $margin-base;
+    max-width: 500px;
 
-    h1 {
-      font-family: 'League Spartan', sans-serif;
-      font-size: $font-size-xl;
-      color: $heading-color;
-    }
-
-    p {
-      font-family: 'Roboto', sans-serif;
-      font-size: $font-size-base;
-      color: $text-color;
-    }
-
-    .auth-button {
-      margin-top: $margin-base;
-      width: 100%;
-    }
-
-    .email-input {
-      padding: $padding-base;
-      margin: $padding-base 0;
-      border: 1px solid $text-color;
-      border-radius: $border-radius;
-      width: 100%;
-      max-width: 300px;
-    }
-  }
-
-  .image-section {
-    display: none;
-  }
-}
-
-@media (min-width: 760px) {
-  .content {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
-
-    .text-section {
+    @media (min-width: 760px) {
       max-width: 50%;
       margin-bottom: 0;
     }
+  }
 
-    .image-section {
+  &__title {
+    font-family: 'League Spartan', sans-serif;
+    font-size: $font-size-xl;
+    color: $heading-color;
+    margin-bottom: $margin-base;
+  }
+
+  &__subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-size: $font-size-base;
+    color: $text-color;
+    margin-bottom: $margin-base;
+  }
+
+  &__or {
+    margin: $padding-base 0;
+  }
+
+  &__email-input {
+    padding: $padding-base;
+    margin: $padding-base 0;
+    border: 1px solid $text-color;
+    border-radius: $border-radius;
+    width: 100%;
+    max-width: 300px;
+    font-family: 'Roboto', sans-serif;
+    font-size: $font-size-base;
+  }
+
+  &__email-button {
+    padding: $padding-base;
+    margin: $padding-base 0;
+    border: none;
+    border-radius: $border-radius;
+    width: 100%;
+    max-width: 300px;
+    background-color: #E0E0E0;
+    color: #A0A0A0;
+    font-family: 'Roboto', sans-serif;
+    font-size: $font-size-base;
+    cursor: not-allowed;
+  }
+
+  &__terms {
+    font-family: 'Roboto', sans-serif;
+    font-size: $font-size-sm;
+    color: $text-color;
+    margin-top: $margin-base;
+
+    a {
+      color: $accent-color;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__image-section {
+    display: block;
+    width: 100%;
+    margin-bottom: $margin-base;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    @media (min-width: 760px) {
       display: block;
       max-width: 50%;
+      margin-bottom: 0;
 
       img {
         width: 100%;
         height: auto;
       }
     }
-  }
-}
-
-@media (min-width: 1280px) {
-  .content {
-    max-width: 1200px;
-    margin: 0 auto;
   }
 }
