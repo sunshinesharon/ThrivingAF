@@ -1,0 +1,25 @@
+@import '../styles/variables';
+
+.auth-button {
+  padding: $padding-base $margin-base;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-size: $font-size-lg;
+
+  &.google {
+    background-color: #fff;
+    color: $text-color;
+    border: 1px solid $text-color;
+  }
+
+  &.email {
+    background-color: $text-color;
+    color: #fff;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
