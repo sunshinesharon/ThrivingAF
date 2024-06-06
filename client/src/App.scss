@@ -17,7 +17,7 @@
     text-align: center;
 
     @media (min-width: 760px) {
-      flex-direction: row-reverse;
+      flex-direction: row-reverse; // Display image on the right for tablets and above
       justify-content: space-between;
       text-align: left;
     }
@@ -56,7 +56,9 @@
     margin: $padding-base 0;
   }
 
-  &__email-input {
+  &__email-input,
+  &__email-button,
+  &__google-button {
     padding: $padding-base;
     margin: $padding-base 0;
     border: 1px solid $text-color;
@@ -65,20 +67,43 @@
     max-width: 300px;
     font-family: 'Roboto', sans-serif;
     font-size: $font-size-base;
+    box-sizing: border-box; // Ensure the padding doesn't affect the width
+  }
+
+  &__email-input {
+    border: 1px solid $text-color;
   }
 
   &__email-button {
-    padding: $padding-base;
-    margin: $padding-base 0;
-    border: none;
-    border-radius: $border-radius;
-    width: 100%;
-    max-width: 300px;
     background-color: #E0E0E0;
     color: #A0A0A0;
-    font-family: 'Roboto', sans-serif;
-    font-size: $font-size-base;
     cursor: not-allowed;
+
+    &:not(:disabled) {
+      background-color: $accent-color;
+      color: $primary-color;
+      cursor: pointer;
+    }
+  }
+
+  &__google-button {
+    background-color: $primary-color;
+    color: $text-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $accent-color;
+      color: $primary-color;
+    }
+  }
+
+  &__google-icon {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
   }
 
   &__terms {
