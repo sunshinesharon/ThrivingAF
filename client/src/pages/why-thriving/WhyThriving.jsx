@@ -1,4 +1,5 @@
 import React from 'react';
+import FeatureGif from "../../assets/images/Features.gif"
 import './WhyThriving.scss';
 
 const WhyThriving = () => {
@@ -7,7 +8,7 @@ const WhyThriving = () => {
         <h1 className="why-thriving__header">Why Thriving?</h1>
         <div className="why-thriving__content">
           <div className="why-thriving__image-section">
-            <img src="path_to_image.png" alt="Creative Tools" className="why-thriving__image" />
+            <img src={FeatureGif} alt="Creative Tools" className="why-thriving__image" />
           </div>
           <div className="why-thriving__text-section">
             <h2 className="why-thriving__title">Meet Your <span>ThrivingAF Sidekicks</span></h2>
@@ -16,7 +17,7 @@ const WhyThriving = () => {
               That's why we created Thriving as your all-in-one marketing assistant. Think of it as having a dedicated marketing team in your pocket – minus the hefty price tag!
               Our innovative platform offers a suite of features designed to help you build a rockstar brand and marketing strategy that gets results.
             </p>
-            <button className="why-thriving__button">Begin Thriving</button>
+            <button className="why-thriving__button" >Begin Thriving</button>
           </div>
         </div>
   
