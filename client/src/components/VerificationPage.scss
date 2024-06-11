@@ -1,0 +1,155 @@
+@import '../styles/variables';
+
+.verification {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: $primary-color;
+  padding: $padding-base;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    @media (min-width: 760px) {
+      flex-direction: row-reverse; // Display image on the right for tablets and above
+      justify-content: space-between;
+      text-align: left;
+    }
+
+    @media (min-width: 1280px) {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  }
+
+  &__text-section {
+    margin-bottom: $margin-base;
+    max-width: 500px;
+
+    @media (min-width: 760px) {
+      max-width: 50%;
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    font-family: 'League Spartan', sans-serif;
+    font-size: $font-size-xl;
+    color: $heading-color;
+    margin-bottom: $margin-base;
+  }
+
+  &__subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-size: $font-size-base;
+    color: $text-color;
+    margin-bottom: $margin-base;
+  }
+
+  &__input {
+    padding: $padding-base;
+    margin: $padding-base 0;
+    border: 1px solid $text-color;
+    border-radius: $border-radius;
+    width: 100%;
+    max-width: 300px;
+    font-family: 'Roboto', sans-serif;
+    font-size: $font-size-base;
+    text-align: center;
+    letter-spacing: 10px;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 300px;
+    margin-top: $margin-base;
+
+    button {
+      padding: $padding-base;
+      border: none;
+      border-radius: $border-radius;
+      width: 45%;
+      font-family: 'Roboto', sans-serif;
+      font-size: $font-size-base;
+    }
+
+    &__back-button {
+      background-color: $secondary-color;
+      color: $text-color;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $accent-color;
+        color: $primary-color;
+      }
+    }
+
+    &__continue-button {
+      background-color: #E0E0E0;
+      color: #A0A0A0;
+      cursor: not-allowed;
+
+      &:not(:disabled) {
+        background-color: $accent-color;
+        color: $primary-color;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__resend {
+    margin-top: $margin-base;
+    color: $text-color;
+    cursor: pointer;
+
+    span {
+      color: $accent-color;
+      text-decoration: underline;
+    }
+  }
+
+  &__terms {
+    font-family: 'Roboto', sans-serif;
+    font-size: $font-size-sm;
+    color: $text-color;
+    margin-top: $margin-base;
+
+    a {
+      color: $accent-color;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__image-section {
+    display: block;
+    width: 100%;
+    margin-bottom: $margin-base;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    @media (min-width: 760px) {
+      display: block;
+      max-width: 50%;
+      margin-bottom: 0;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

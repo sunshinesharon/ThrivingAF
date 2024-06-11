@@ -1,0 +1,70 @@
+# questions:
+  # - id: 1
+  #   question: "What's your secret sauce?"
+  #   example_answer: "I'm a freelancer who likes to be perceived as a Marketing expert who can help not for profit businesses succeed in all that they do. I come with 6 years of experience and I trust I can use all the industry knowledge I've acquired this far for better good."
+
+  # - id: 2
+  #   question: "Who's your dream client?"
+  #   example_answer: "Churches, NGOs, Universities."
+
+  # - id: 3
+  #   question: "What's your story?"
+  #   example_answer: "I'm hardworking, ambitious and genuinely want to help not for profits effectively communicate the cause they are standing for."
+
+  # - id: 4
+  #   question: "What are your marketing goals?"
+  #   example_answer: "To expand my clientele. Become very well known in Philadelphia."
+
+  # - id: 5
+  #   question: "Are you currently using any marketing channels?"
+  #   example_answer: "I have a very small social media presence but haven't started anything else yet."
+
+  # - id: 6
+  #   question: "What's your budget for marketing each month?"
+  #   example_answer: "Nearly a $100 each month maybe? If I can do my marketing organically, that'd be ideal."
+
+  # - id: 7
+  #   question: "How will you measure success?"
+  #   example_answer: "More inquiries, more DMs on IG, more actual businesses I get to work with at the end of the day."
+
+  # - id: 8
+  #   question: "Who's your competition?"
+  #   example_answer: "Yes, there are other not for profit established agencies doing this business."
+
+  # - id: 9
+  #   question: "What are your biggest roadblocks?"
+  #   example_answer: "Starting a marketing plan, improving brand awareness, getting not for profits to know my not for profit agency and choose my agency."
+
+  # - id: 10
+  #   question: "How do you stay connected with clients after a project?"
+  #   example_answer: "I reach out to them with any further suggestions since the Marketing landscape is shifting swiftly."
+questions:
+ - id: 1
+   question: "What's your secret sauce?"
+   answer: "I offer industry updates to my followers on Instagram. My followers get to know the latest updates, developments and trends in the Tech Industry. I'm a Genz Influencer and I seek to inform and educate. "
+ - id: 2
+   question: "Who's your dream client?"
+   answer: "My clients are tech brands who'd like to collaborate with me to feature their product. "
+ - id: 3
+   question: "What's your story?"
+   answer: " I have a passion for all things software and tech. I love to tech-nically do what excites! "
+ - id: 4
+   question: "What are your marketing goals?"
+   answer: "I'd like to partner with more tech brands, garner more followers on my Instagram and YouTube. Eventually, be renowned in the industry as I offer great tech recommendations."
+ - id: 5
+   question: "Are you currently using any marketing channels?"
+   answer: "Yes Instagram and YouTube. I have 400K followers on YouTube."
+ - id: 6
+   question: "What's your budget for marketing each month?"
+   answer: "Around $500 each month depending on important events in the tech industry. "
+ - id: 7
+   question: "How will you measure success?"
+   answer: "Brand Collab inquiries, video views, video saves and profile followers."
+ - id: 8
+   question: "Who's your competition?"
+   answer: "Other Tech passionate individuals keeping people informed on the latest trends and updates in the tech industry, also the Instagram algorithm that is constantly changing."
+ - id: 9
+   question: "What are your biggest roadblocks?"
+   answer: " I'm great at tech but not with crafting a marketing plan."
+ - id: 10
+   question: "How do you stay connected with clients after a project?"

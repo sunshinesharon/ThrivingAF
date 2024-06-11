@@ -1,0 +1,4 @@
+crewai
+flask
+pyyaml
+Flask-Cors
