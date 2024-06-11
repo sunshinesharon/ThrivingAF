@@ -1,0 +1,131 @@
+@import '../../styles/variables';
+
+.pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__banner {
+    width: 100%;
+
+    .pricing__banner-image {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__form-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 20px; // Adjust as necessary to position the form correctly
+    opacity: 1; // Ensure the form is visible
+    transform: translateY(0); 
+
+    @media (min-width: 760px) {
+      padding: 40px;
+      margin-top: -20px; 
+    }
+
+    @media (min-width: 1280px) {
+      padding: 60px;
+      margin-top: 10px; 
+    }
+
+    &--visible {
+      opacity: 1;
+      transform: translateY(0); // Ensure the form is fully visible
+    }
+  }
+
+  &__form {
+    background-color: $secondary-color;
+    border-radius: $border-radius;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    @media (min-width: 760px) {
+      padding: 40px;
+    }
+
+    @media (min-width: 1280px) {
+      padding: 60px;
+    }
+  }
+
+  &__form-title {
+    font-size: $font-size-xl;
+    margin-bottom: 20px;
+    color: $heading-color;
+
+    @media (min-width: 760px) {
+      font-size: $font-size-xl-desktop;
+    }
+  }
+
+  &__form-group {
+    margin-bottom: 20px;
+
+    @media (min-width: 760px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__form-label {
+    display: block;
+    font-size: $font-size-base;
+    margin-bottom: 5px;
+    color: $heading-color;
+
+    @media (min-width: 760px) {
+      font-size: $font-size-base-desktop;
+    }
+  }
+
+  &__form-input,
+  &__form-textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: $font-size-base;
+    border: 1px solid $primary-color;
+    border-radius: $border-radius;
+    background-color: $primary-color;
+    color: $text-color;
+
+    @media (min-width: 760px) {
+      font-size: $font-size-base-desktop;
+      padding: 15px;
+    }
+  }
+
+  &__form-textarea {
+    height: 100px;
+    resize: none;
+
+    @media (min-width: 760px) {
+      height: 150px;
+    }
+  }
+
+  &__form-button {
+    background-color: $accent-color;
+    color: $primary-color;
+    border: none;
+    border-radius: $border-radius;
+    padding: 15px 30px;
+    font-size: $font-size-base;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($accent-color, 10%);
+    }
+
+    @media (min-width: 760px) {
+      font-size: $font-size-base-desktop;
+    }
+  }
+}

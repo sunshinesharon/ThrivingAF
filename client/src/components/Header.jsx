@@ -42,7 +42,7 @@ const Header = () => {
           Why Thriving
         </a>
         <a href="/pricing" className="header__link">
-          Pricing
+          Beta
         </a>
         <a href="/freelance-hub" className="header__link">
           Freelance Hub
@@ -72,7 +72,7 @@ const Header = () => {
               Why Thriving
             </a>
             <a href="/pricing" className="header__overlay-link">
-              Pricing
+              Beta
             </a>
             <a href="/freelance-hub" className="header__overlay-link">
               Freelance Hub

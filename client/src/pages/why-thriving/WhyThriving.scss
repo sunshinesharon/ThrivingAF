@@ -199,7 +199,7 @@
         margin-bottom: 20px;
 
         @media (min-width: 760px) {
-          font-size: $font-size-lg-desktop;
+          font-size: $font-size-lg-desktop; // Adjust font size for tablets and desktops
         }
       }
 

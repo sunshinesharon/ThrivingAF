@@ -1,12 +1,50 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import '../pricing/Pricing.scss';
 
-function Pricing() {
+const Pricing = () => {
+  const [showForm, setShowForm] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 200) {
+        setShowForm(true);
+      } else {
+        setShowForm(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh', paddingTop: '5vh', textAlign: 'center' }}>
-    <h1>Pricing</h1>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-  </div>
-  )
-}
+    <div className="pricing">
+      <div className="pricing__banner">
+        <img src="taf.gif" alt="Beta Program Banner" className="pricing__banner-image" />
+      </div>
+      <div className={`pricing__form-container ${showForm ? 'pricing__form-container--visible' : ''}`}>
+        <form className="pricing__form">
+          <h2 className="pricing__form-title">Luuna's Beta Program</h2>
+          <div className="pricing__form-group">
+            <label htmlFor="name" className="pricing__form-label">Name</label>
+            <input type="text" id="name" className="pricing__form-input" />
+          </div>
+          <div className="pricing__form-group">
+            <label htmlFor="email" className="pricing__form-label">Email</label>
+            <input type="email" id="email" className="pricing__form-input" />
+          </div>
+          <div className="pricing__form-group">
+            <label htmlFor="message" className="pricing__form-label">Tell us why you'd be an awesome beta tester</label>
+            <textarea id="message" className="pricing__form-textarea"></textarea>
+          </div>
+          <button type="submit" className="pricing__form-button">Apply to join beta program</button>
+        </form>
+      </div>
+    </div>
+  );
+};
 
-export default Pricing
+export default Pricing;

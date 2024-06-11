@@ -1,5 +1,7 @@
 @import "./styles/variables";
 
+@import "./styles/variables";
+
 * {
   margin: 0;
   padding: 0;
@@ -7,11 +9,11 @@
 }
 
 body {
-  background-color: $primary-color; 
-  color: #fff; 
+  background-color: $primary-color;
+  color: #fff;
   margin: 0;
   padding: 0;
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   cursor: pointer;
 }
 
@@ -22,11 +24,9 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #131314;
-  padding: 0; 
+  background-color: $primary-color;
+  padding: 0;
   margin: 0;
-  font-family: sans-serif;
-  
 
   &__content {
     display: flex;
@@ -55,7 +55,6 @@ body {
     margin-bottom: $margin-base;
     max-width: 500px;
 
-
     @media (min-width: 760px) {
       max-width: 50%;
       margin-bottom: 0;
@@ -73,6 +72,10 @@ body {
     font-size: $font-size-xl;
     color: $heading-color;
     margin-bottom: $margin-base;
+
+    @media (min-width: 760px) {
+      font-size: $font-size-xl-desktop;
+    }
   }
 
   &__subtitle {
@@ -80,6 +83,10 @@ body {
     font-size: $font-size-base;
     color: $text-color;
     margin-bottom: $margin-base;
+
+    @media (min-width: 760px) {
+      font-size: $font-size-base-desktop;
+    }
   }
 
   &__or {
@@ -98,6 +105,10 @@ body {
     font-family: "Roboto", sans-serif;
     font-size: $font-size-base;
     box-sizing: border-box; // Ensure the padding doesn't affect the width
+
+    @media (min-width: 760px) {
+      font-size: $font-size-base-desktop;
+    }
   }
 
   &__email-input {
@@ -118,7 +129,7 @@ body {
 
   &__google-button {
     background-color: #fff;
-    color: #131314;
+    color: $primary-color;
     display: flex;
     align-items: center;
     justify-content: center;

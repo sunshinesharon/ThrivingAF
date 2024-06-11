@@ -18,6 +18,7 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Login />} />
         <Route path="/verify" element={<VerificationPage />} />
         <Route path="/question" element={<Question />} />
         <Route path="/response" element={<ResponsePage />} />
