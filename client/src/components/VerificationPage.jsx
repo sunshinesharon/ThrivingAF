@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import './VerificationPage.scss';
-import HomeGif from '../assets/images/taf.gif'; // Ensure this path matches the actual location of the image
+import HomeGif from '../assets/images/taf.gif';
 
 const VerificationPage = () => {
   const [code, setCode] = useState('');
@@ -42,11 +42,11 @@ const VerificationPage = () => {
   };
 
   const isCodeValid = code => {
-    return code.length === 6; // Example validation for a 6-digit code
+    return code.length === 6;
   };
 
   useEffect(() => {
-    handleSendCode(); // Send code when the component mounts
+    handleSendCode();
   }, []);
 
   return (
