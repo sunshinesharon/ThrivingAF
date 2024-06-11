@@ -7,6 +7,7 @@
 
   &__banner {
     width: 100%;
+    padding-top: 60px;
 
     .pricing__banner-image {
       width: 100%;
@@ -29,7 +30,7 @@
     }
 
     &--visible {
-      top: 40%;  // Adjust to how much it should cover the banner
+      top: 40%;
       z-index: 1000;
     }
   }

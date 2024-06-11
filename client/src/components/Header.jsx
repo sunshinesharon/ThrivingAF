@@ -47,9 +47,6 @@ const Header = () => {
         <a href="/freelance-hub" className="header__link">
           Freelance Hub
         </a>
-        <a href="/contact" className="header__link">
-          Contact
-        </a>
         {isLoggedIn && (
           <button
             onClick={handleLogout}
@@ -76,9 +73,6 @@ const Header = () => {
             </a>
             <a href="/freelance-hub" className="header__overlay-link">
               Freelance Hub
-            </a>
-            <a href="/contact" className="header__overlay-link">
-              Contact
             </a>
             {isLoggedIn && (
               <button

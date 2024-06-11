@@ -1,0 +1,16 @@
+@import '../../styles/variables';
+
+.comingsoon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+
+  &__banner {
+    width: 100%;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

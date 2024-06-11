@@ -118,7 +118,7 @@
     }
 
     @media (min-width: 760px) {
-      font-size: $font-size-base; // Adjust font size for tablets and desktops
+      font-size: $font-size-base;
     }
   }
 }
@@ -143,7 +143,7 @@
     margin-bottom: 20px;
 
     @media (min-width: 760px) {
-      align-items: flex-start; // Ensure it aligns to the top on larger screens
+      align-items: flex-start; 
     }
   }
 
@@ -153,8 +153,8 @@
     color: $accent-color;
 
     @media (min-width: 760px) {
-      font-size: $font-size-lg-desktop; // Adjust font size for tablets and desktops
-      text-align: left; // Ensure it aligns to the left on larger screens
+      font-size: $font-size-lg-desktop; 
+      text-align: left;
     }
   }
 
@@ -163,7 +163,7 @@
     padding-left: 0;
 
     @media (min-width: 760px) {
-      padding-left: 40px; // Add padding on the left for larger screens
+      padding-left: 40px;
     }
   }
 
@@ -203,7 +203,7 @@
         margin-bottom: 20px;
 
         @media (min-width: 760px) {
-          font-size: $font-size-lg-desktop; // Adjust font size for tablets and desktops
+          font-size: $font-size-lg-desktop; 
         }
       }
 
@@ -216,7 +216,7 @@
           margin-bottom: 10px;
 
           @media (min-width: 760px) {
-            font-size: $font-size-base-desktop; // Adjust font size for tablets and desktops
+            font-size: $font-size-base-desktop; 
           }
         }
       }
