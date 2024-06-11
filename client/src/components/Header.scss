@@ -1,4 +1,4 @@
-@import '../styles/variables';
+@import "../styles/variables";
 
 .header {
   position: fixed;
@@ -8,13 +8,21 @@
   justify-content: space-between;
   align-items: center;
   padding: $padding-base;
-  background-color: $primary-color;
+  background-color: #131314;
   z-index: 1000;
 
   &__logo {
     img {
-      width: 40px; // Adjust size as needed
+      width: 50px; // Adjust size as needed
       height: auto;
+    }
+
+    @media (min-width: 1280px) {
+      position:relative;
+      left: 14rem; 
+      img {
+        width: 50px; // Adjust the width as needed for desktop
+      }
     }
   }
 
@@ -23,12 +31,29 @@
 
     .header__link {
       text-decoration: none;
-      color: $text-color;
-      font-family: 'Roboto', sans-serif;
+      color: #545454;
+      font-family: "Roboto", sans-serif;
       font-size: 14px; // Reduced font size
       padding: 0 10px; // Reduced padding
       margin: 0 5px;
       border-radius: 20px;
+
+      &:hover {
+        background-color: $accent-color;
+        color: $primary-color;
+      }
+    }
+
+    .header__logout-button {
+      background: none;
+      border: 1px solid $text-color; // Add border to the button
+      color: inherit;
+      cursor: pointer;
+      font: inherit;
+      text-decoration: none;
+      padding: 8px 16px; // Add some padding to the button
+      border-radius: 20px; // Optional: Add border radius for rounded corners
+      margin-left: 8px; // Add margin to separate from other links
 
       &:hover {
         background-color: $accent-color;
@@ -66,11 +91,28 @@
       .header__overlay-link {
         text-decoration: none;
         color: $primary-color;
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
         font-size: 18px; // Larger font size for overlay links
         padding: 10px 0; // Padding for overlay links
         margin: 10px 0;
         border-radius: 20px;
+
+        &:hover {
+          background-color: $accent-color;
+          color: $primary-color;
+        }
+      }
+
+      .header__logout-button {
+        background: none;
+        border: 1px solid $primary-color; // Add border to the button
+        color: $primary-color;
+        cursor: pointer;
+        font: inherit;
+        text-decoration: none;
+        padding: 10px 20px; // Add some padding to the button
+        border-radius: 20px; // Optional: Add border radius for rounded corners
+        margin: 10px 0; // Add margin to separate from other links
 
         &:hover {
           background-color: $accent-color;
@@ -88,7 +130,7 @@
       transform: translateX(-50%);
       justify-content: center;
       align-items: center;
-      background-color: $secondary-color;
+      background-color: #1E1D1D;
       border-radius: 20px; // More rounded corners
       padding: 5px 10px; // Reduced padding
       height: 40px; // Adjust height as needed
@@ -108,5 +150,9 @@
         font-size: 16px;
       }
     }
+  }
+
+  @media (max-width: 760px) {
+    width: 93%;
   }
 }
