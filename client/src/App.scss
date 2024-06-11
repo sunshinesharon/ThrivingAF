@@ -1,4 +1,19 @@
-@import './styles/variables';
+@import "./styles/variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $primary-color; 
+  color: #fff; 
+  margin: 0;
+  padding: 0;
+  font-family: Roboto;
+  cursor: pointer;
+}
 
 .app {
   padding-top: 60px; // Adjust according to the height of the header
@@ -7,8 +22,11 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: $primary-color;
-  padding: $padding-base;
+  background-color: #131314;
+  padding: 0; 
+  margin: 0;
+  font-family: sans-serif;
+  
 
   &__content {
     display: flex;
@@ -17,14 +35,19 @@
     text-align: center;
 
     @media (min-width: 760px) {
-      flex-direction: row-reverse;
+      flex-direction: row-reverse; // Display image on the right for tablets and above
       justify-content: space-between;
       text-align: left;
+      padding: 0 40px;
     }
 
     @media (min-width: 1280px) {
       max-width: 1200px;
       margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 60px;
     }
   }
 
@@ -32,21 +55,28 @@
     margin-bottom: $margin-base;
     max-width: 500px;
 
+
     @media (min-width: 760px) {
       max-width: 50%;
       margin-bottom: 0;
     }
+    @media (max-width: 765px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 340px;
+    }
   }
 
   &__title {
-    font-family: 'League Spartan', sans-serif;
+    font-family: "League Spartan", sans-serif;
     font-size: $font-size-xl;
     color: $heading-color;
     margin-bottom: $margin-base;
   }
 
   &__subtitle {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: $font-size-base;
     color: $text-color;
     margin-bottom: $margin-base;
@@ -56,33 +86,58 @@
     margin: $padding-base 0;
   }
 
-  &__email-input {
+  &__email-input,
+  &__email-button,
+  &__google-button {
     padding: $padding-base;
     margin: $padding-base 0;
     border: 1px solid $text-color;
     border-radius: $border-radius;
     width: 100%;
     max-width: 300px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: $font-size-base;
+    box-sizing: border-box; // Ensure the padding doesn't affect the width
+  }
+
+  &__email-input {
+    border: 1px solid $text-color;
   }
 
   &__email-button {
-    padding: $padding-base;
-    margin: $padding-base 0;
-    border: none;
-    border-radius: $border-radius;
-    width: 100%;
-    max-width: 300px;
-    background-color: #E0E0E0;
-    color: #A0A0A0;
-    font-family: 'Roboto', sans-serif;
-    font-size: $font-size-base;
+    background-color: #e0e0e0;
+    color: #a0a0a0;
     cursor: not-allowed;
+
+    &:not(:disabled) {
+      background-color: $accent-color;
+      color: $primary-color;
+      cursor: pointer;
+    }
+  }
+
+  &__google-button {
+    background-color: #fff;
+    color: #131314;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $accent-color;
+      color: $primary-color;
+    }
+  }
+
+  &__google-icon {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
   }
 
   &__terms {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: $font-size-sm;
     color: $text-color;
     margin-top: $margin-base;
