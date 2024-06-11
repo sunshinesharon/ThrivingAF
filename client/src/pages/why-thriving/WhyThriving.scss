@@ -78,7 +78,7 @@
   }
 
   &__title {
-    font-family: "League Spartan", sans-serif;
+    font-family: $header-font;
     font-size: $font-size-lg;
     color: $heading-color;
     margin-bottom: $margin-base;
@@ -93,6 +93,7 @@
   }
 
   &__description {
+    font-family: $primary-font;
     font-size: $font-size-base; 
     margin-bottom: $margin-base;
     line-height: 1.6; 
@@ -103,6 +104,7 @@
   }
 
   &__button {
+    font-family: $primary-font;
     background-color: $accent-color;
     color: $primary-color;
     border: none;
@@ -146,6 +148,7 @@
   }
 
   &__header {
+    font-family: $header-font;
     font-size: $font-size-base;
     color: $accent-color;
 
@@ -165,6 +168,7 @@
   }
 
   &__description {
+    font-family: $primary-font;
     font-size: $font-size-base;
     margin-bottom: 40px;
     line-height: 1.6;

@@ -38,27 +38,32 @@
   }
 
   &__title {
-    font-family: 'League Spartan', sans-serif;
+    font-family: $header-font;
     font-size: $font-size-xl;
     color: $heading-color;
     margin-bottom: $margin-base;
   }
 
+  &_message {
+    font-family: $primary-font;
+  }
+
   &__subtitle {
-    font-family: 'Roboto', sans-serif;
+    font-family: $primary-font;
     font-size: $font-size-base;
     color: $text-color;
     margin-bottom: $margin-base;
   }
 
   &__input {
+    font-family: $primary-font;
     padding: $padding-base;
     margin: $padding-base 0;
     border: 1px solid $text-color;
     border-radius: $border-radius;
     width: 100%;
     max-width: 300px;
-    font-family: 'Roboto', sans-serif;
+    font-family: $primary-font;
     font-size: $font-size-base;
     text-align: center;
     letter-spacing: 10px;
@@ -76,7 +81,7 @@
       border: none;
       border-radius: $border-radius;
       width: 45%;
-      font-family: 'Roboto', sans-serif;
+      font-family: $primary-font;
       font-size: $font-size-base;
     }
 
@@ -116,7 +121,7 @@
   }
 
   &__terms {
-    font-family: 'Roboto', sans-serif;
+    font-family: $primary-font;
     font-size: $font-size-sm;
     color: $text-color;
     margin-top: $margin-base;

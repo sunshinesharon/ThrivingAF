@@ -1,17 +1,23 @@
+@use "fonts" as *; 
+
 $primary-color: #131314;
 $secondary-color: #545454;
 $accent-color: #EFA500;
 $text-color: #fff;
 $heading-color: #fff;
 
+$primary-font: "Open Sauce", sans-serif;
+$header-font: "League Spartan", sans-serif;
+$title-font: "Chewy", serif;
+
 $font-size-base: 14px;
-$font-size-lg: 24px;
-$font-size-xl: 32px;
+$font-size-lg: 22px;
+$font-size-xl: 28px;
 $font-size-sm: 12px;
 
-$font-size-base-desktop: 18px;
-$font-size-lg-desktop: 25px;
-$font-size-xl-desktop: 34px;
+$font-size-base-desktop: 16.5px;
+$font-size-lg-desktop: 24px;
+$font-size-xl-desktop: 32px;
 
 $border-radius: 20px;
 $padding-base: 10px;
