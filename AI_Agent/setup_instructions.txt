@@ -1,0 +1,76 @@
+# Setup Instructions
+
+## Installation of Required Python3 Packages
+Note: The AI Agents packages are compatible only with Python3.
+
+- python3 -m pip install crewai
+- python3 -m pip install flask
+- python3 -m pip install pyyaml
+
+## Activating the Virtual Environment (Please do this step if you aren't able to install the above packages or if you're facing version conflicts)
+Ensure that you activate the virtual environment before running the application:
+ - virtualenv ai-agents-env
+ - source /ai-agent-env/bin/activate
+
+## Running the main.py File
+Once the environment is set up and all packages are installed, you can run the application:
+- python3 ./main.py
+
+## Making an API Request (POST) with JSON
+To perform a POST request, use the following JSON format Questions and Answers
+
+{
+  "question_and_answer": [
+    {
+      "id": 1,
+      "question": "What's your secret sauce?",
+      "answer": "I offer industry updates to my followers on Instagram. My followers get to know the latest updates, developments and trends in the Tech Industry. I'm a Genz Influencer and I seek to inform and educate."
+    },
+    {
+      "id": 2,
+      "question": "Who's your dream client?",
+      "answer": "My clients are tech brands who'd like to collaborate with me to feature their product."
+    },
+    {
+      "id": 3,
+      "question": "What's your story?",
+      "answer": "I have a passion for all things software and tech. I love to tech-nically do what excites!"
+    },
+    {
+      "id": 4,
+      "question": "What are your marketing goals?",
+      "answer": "I'd like to partner with more tech brands, garner more followers on my Instagram and YouTube. Eventually, be renowned in the industry as I offer great tech recommendations."
+    },
+    {
+      "id": 5,
+      "question": "Are you currently using any marketing channels?",
+      "answer": "Yes, Instagram and YouTube. I have 400K followers on YouTube."
+    },
+    {
+      "id": 6,
+      "question": "What's your budget for marketing each month?",
+      "answer": "Around $500 each month depending on important events in the tech industry."
+    },
+    {
+      "id": 7,
+      "question": "How will you measure success?",
+      "answer": "Brand Collab inquiries, video views, video saves, and profile followers."
+    },
+    {
+      "id": 8,
+      "question": "Who's your competition?",
+      "answer": "Other Tech passionate individuals keeping people informed on the latest trends and updates in the tech industry, also the Instagram algorithm that is constantly changing."
+    },
+    {
+      "id": 9,
+      "question": "What are your biggest roadblocks?",
+      "answer": "I'm great at tech but not with crafting a marketing plan."
+    },
+    {
+      "id": 10,
+      "question": "How do you stay connected with clients after a project?",
+      "answer": "I reach out to them with any further suggestions since the Marketing landscape is shifting swiftly."
+    }
+  ]
+}
+
