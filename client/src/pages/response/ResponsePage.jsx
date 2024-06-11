@@ -11,7 +11,7 @@ const ResponsePage = () => {
   const location = useLocation();
   const { data } = location.state || {};
   const [feedback, setFeedback] = useState("");
-  const [vote, setVote] = useState(null); // null, 'up', 'down'
+  const [vote, setVote] = useState(null);
 
   const handleFeedbackChange = (event) => {
     setFeedback(event.target.value);
@@ -20,7 +20,7 @@ const ResponsePage = () => {
   const handleSubmitFeedback = () => {
     // Handle feedback submission logic here
     console.log({ vote, feedback });
-    setFeedback(""); // Clear the feedback field after submission
+    setFeedback(""); 
   };
 
   const handleDownload = () => {
@@ -69,14 +69,29 @@ const ResponsePage = () => {
       <Typography variant="h6" gutterBottom>
         {data.title || "Marketing Plan"}
       </Typography>
-      <Box sx={{ marginBottom: "10px" }}>
-        <Typography variant="h6" gutterBottom>
-          Executive Summary
-        </Typography>
-        <Typography variant="body1" paragraph>
-          {data.executive_summary}
-        </Typography>
-      </Box>
+      {Object.keys(data).map((key, index) => {
+        if (key !== "title") {
+          return (
+            <Box key={index} sx={{ marginBottom: "10px" }}>
+              <Typography variant="h6" gutterBottom>
+                {key.replace(/_/g, " ").replace(/^\w/, (c) => c.toUpperCase())}
+              </Typography>
+              {Array.isArray(data[key]) ? (
+                data[key].map((item, idx) => (
+                  <Typography key={idx} variant="body1" paragraph>
+                    {item}
+                  </Typography>
+                ))
+              ) : (
+                <Typography variant="body1" paragraph>
+                  {data[key]}
+                </Typography>
+              )}
+            </Box>
+          );
+        }
+        return null;
+      })}
     </Box>
   );
 
@@ -91,7 +106,7 @@ const ResponsePage = () => {
         alignItems: "center",
         color: "white",
         padding: "20px",
-        paddingTop: "60px", // Add padding to the top
+        paddingTop: "60px",
       }}
     >
       <Box

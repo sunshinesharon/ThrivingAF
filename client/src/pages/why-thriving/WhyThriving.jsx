@@ -1,12 +1,29 @@
-import React from 'react'
+import React from 'react';
+import './WhyThriving.scss';
 
-function WhyThriving() {
+const WhyThriving = () => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh', paddingTop: '5vh', textAlign: 'center' }}>
-    <h1>WhyThriving</h1>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-  </div>
-  )
-}
+    <div className="why-thriving">
+      <h1 className="why-thriving__header">Why Thriving?</h1>
+      <div className="why-thriving__content">
+        <div className="why-thriving__image-section">
+          <img src="path_to_image.png" alt="Creative Tools" className="why-thriving__image" />
+        </div>
+        <div className="why-thriving__text-section">
+          <h2 className="why-thriving__title">Meet Your <span>ThrivingAF Sidekicks</span></h2>
+          <p className="why-thriving__description">
+          We're a team of passionate freelance cheerleaders who get the hustle and heart of the solopreneur life. We built Thriving because we believe every freelancer deserves to be Thriving AF – with the tools and strategies to land their dream clients.
 
-export default WhyThriving
+That's why we created Thriving as your all-in-one marketing assistant.  Think of it as having a dedicated marketing team in your pocket –  minus the hefty price tag!
+
+Our innovative platform offers a suite of features designed to help you build a rockstar brand and marketing strategy that gets results. 
+
+          </p>
+          <button className="why-thriving__button">Try Thriving</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default WhyThriving;
