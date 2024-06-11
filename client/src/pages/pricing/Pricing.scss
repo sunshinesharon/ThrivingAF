@@ -15,27 +15,22 @@
   }
 
   &__form-container {
+    position: relative;
     width: 100%;
-    display: flex;
-    justify-content: center;
+    max-width: 600px;
     padding: 20px;
-    margin-top: 20px; // Adjust as necessary to position the form correctly
-    opacity: 1; // Ensure the form is visible
-    transform: translateY(0); 
 
     @media (min-width: 760px) {
       padding: 40px;
-      margin-top: -20px; 
     }
 
     @media (min-width: 1280px) {
       padding: 60px;
-      margin-top: 10px; 
     }
 
     &--visible {
-      opacity: 1;
-      transform: translateY(0); // Ensure the form is fully visible
+      top: 40%;  // Adjust to how much it should cover the banner
+      z-index: 1000;
     }
   }
 
@@ -46,7 +41,7 @@
     width: 100%;
     max-width: 600px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    
+
     @media (min-width: 760px) {
       padding: 40px;
     }
@@ -57,7 +52,7 @@
   }
 
   &__form-title {
-    font-size: $font-size-xl;
+    font-size: $font-size-lg;
     margin-bottom: 20px;
     color: $heading-color;
 
@@ -126,6 +121,39 @@
 
     @media (min-width: 760px) {
       font-size: $font-size-base-desktop;
+    }
+  }
+
+  &__info-section {
+    position: relative;
+    width: 100%;
+    margin-top: 40px;
+
+    .pricing__info-image {
+      width: 100%;
+      height: auto;
+    }
+
+    .pricing__info-button {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background-color: $accent-color;
+      color: $primary-color;
+      border: none;
+      border-radius: $border-radius;
+      padding: 10px 20px;
+      font-size: $font-size-base;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($accent-color, 10%);
+      }
+
+      @media (min-width: 760px) {
+        font-size: $font-size-lg;
+        padding: 15px 30px;
+      }
     }
   }
 }
