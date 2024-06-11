@@ -11,7 +11,6 @@ const Header = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Check if the user is logged in
     const token = localStorage.getItem("token");
     setIsLoggedIn(!!token);
   }, []);
@@ -28,10 +27,14 @@ const Header = () => {
     navigate("/");
   };
 
+  const handleLogoClick = () => {
+    navigate("/verify");
+  };
+
   return (
     <header className="header">
       <div className="header__logo">
-        <img src={Logo} alt="Logo" />
+        <img src={Logo} alt="Logo" onClick={handleLogoClick}/>
       </div>
       <nav className={`header__nav ${menuOpen ? "header__nav--open" : ""}`}>
         <a href="/" className="header__link">
