@@ -129,37 +129,71 @@ const QuestionForm = () => {
   };
 
   const handleContinue = async () => {
-    if (activeStep < steps.length - 1) {
-      setActiveStep(activeStep + 1);
-    } else {
-      // Format the answers
-      const formattedAnswers = {
-        question_and_answer: steps.map((question, index) => ({
-          id: index + 1,
-          question,
-          answer: answers[index],
-        })),
-      };
-
-      // Post to the API
-      try {
-        setLoading(true);
-        const response = await fetch("http://localhost:8081/ai", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formattedAnswers),
-        });
-        const data = await response.json();
-        // Navigate to the response page with the response data
-        navigate("/response", { state: { data } });
-      } catch (error) {
-        console.error("Error posting data:", error);
-        setLoading(false); // Stop loading in case of error
+      if (activeStep < steps.length - 1) {
+        setActiveStep(activeStep + 1);
+      } else {
+        // Format the answers
+        const formattedAnswers = {
+          question_and_answer: steps.map((question, index) => ({
+            id: index + 1,
+            question,
+            answer: answers[index],
+          })),
+        };
+  
+        // Post to the API
+        try {
+          const reorderJson = (input) => {
+            const desiredOrder = [
+                "title",
+                "executive_summary",
+                "target_audience",
+                "marketing_goals",
+                "marketing_strategies",
+                "content_marketing",
+                "social_media_engagement",
+                "industry_networking",
+                "search_engine_optimization",
+                "client_retention",
+                "budget_allocation",
+                "additional_recommendations"
+            ];
+        
+            const orderedOutput = {};
+        
+            // Add keys that are in the desired order
+            desiredOrder.forEach(key => {
+                if (key in input) {
+                    orderedOutput[key] = input[key];
+                }
+            });
+        
+            // Add any remaining keys that were not in the desired order
+            Object.keys(input).forEach(key => {
+                if (!(key in orderedOutput)) {
+                    orderedOutput[key] = input[key];
+                }
+            });
+        
+            return orderedOutput;
+        };
+          setLoading(true);
+          const response = await fetch("http://localhost:8081/ai", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formattedAnswers),
+          });
+          const data = await response.json();
+          const reorder = await reorderJson(data)
+          navigate("/response", { state: { data:reorder } });
+        } catch (error) {
+          console.error("Error posting data:", error);
+          setLoading(false);
+        }
       }
-    }
-  };
+    };
 
   const handleIconClick = (index) => {
     setActiveStep(index);
@@ -169,6 +203,38 @@ const QuestionForm = () => {
     "🍝", "💼", "🤔", "🫰", "🚀",
     "📺", "💸", "🙄", "🚧", "🫶"
   ];
+
+  const displayIcons = () => {
+    let displayedIcons = [];
+    if (activeStep === 0) {
+      displayedIcons = [icons[0], icons[1]];
+    } else if (activeStep === icons.length - 1) {
+      displayedIcons = [icons[activeStep - 1], icons[activeStep]];
+    } else {
+      displayedIcons = [icons[activeStep - 1], icons[activeStep], icons[activeStep + 1]];
+    }
+    return displayedIcons.map((icon, index) => (
+      <Box
+        key={index}
+        onClick={() => handleIconClick(activeStep === 0 ? index : activeStep === icons.length - 1 ? activeStep - 1 + index : activeStep - 1 + index)}
+        sx={{
+          margin: "0 20px", 
+          width: 60, 
+          height: 60,
+          borderRadius: "50%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "#ffffff", 
+          boxShadow: "0 2px 5px rgba(0,0,0,0.2)",
+          fontSize: "24px", 
+          cursor: "pointer",
+        }}
+      >
+        {icon}
+      </Box>
+    ));
+  };  
 
   return (
     <Background>
@@ -201,7 +267,7 @@ const QuestionForm = () => {
           fullWidth
           margin="normal"
           multiline
-          rows={6} // Increase the number of rows to accommodate longer text
+          rows={6} 
           InputProps={{
             style: {
               color: "white",
@@ -219,7 +285,17 @@ const QuestionForm = () => {
           {activeStep === steps.length - 1 ? "Finish" : "Continue"}
         </ContinueButton>
       </StyledPaper>
-      <DecorativeLine>
+      <Box sx={{
+  position: "absolute",
+  bottom: "10%",
+  left: "10%",
+  right: "10%",
+  display: "flex",
+  justifyContent: "center"
+}}>
+  {displayIcons()}
+</Box>
+      {/* <DecorativeLine>
         {icons.map((icon, index) => (
           <Icon
             key={index}
@@ -229,7 +305,7 @@ const QuestionForm = () => {
             {icon}
           </Icon>
         ))}
-      </DecorativeLine>
+      </DecorativeLine> */}
     </Background>
   );
 };
