@@ -5,14 +5,21 @@
   flex-direction: column;
   align-items: center;
   padding: 40px;
-  background-color: $primary-color;
+  background-color: $primary-color; 
   color: $text-color;
   text-align: center;
+  border-radius: $border-radius; 
+  margin: 20px;
+  padding: 60px 20px;
 
   &__header {
     font-size: $font-size-xl;
-    margin-bottom: 40px;
+    margin-bottom: 40px; 
     color: $heading-color;
+
+    @media (min-width: 760px) {
+      font-size: $font-size-xl-desktop;
+    }
   }
 
   &__content {
@@ -20,17 +27,22 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 100%;
+    background-color: $secondary-color; 
+    border-radius: $border-radius;
+    padding: 20px; 
 
     @media (min-width: 760px) {
-      flex-direction: row-reverse;
+      flex-direction: row;
       justify-content: space-between;
       text-align: left;
+      padding: 40px 20px;
     }
 
     @media (min-width: 1280px) {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 60px;
+      padding: 60px 40px; 
     }
   }
 
@@ -38,25 +50,30 @@
     display: block;
     width: 100%;
     margin-bottom: $margin-base;
+    order: 2; 
 
     @media (min-width: 760px) {
       max-width: 50%;
       margin-bottom: 0;
+      order: 1; 
     }
 
     .why-thriving__image {
       width: 100%;
       height: auto;
+      border-radius: $border-radius; 
     }
   }
 
   &__text-section {
     margin-bottom: $margin-base;
     max-width: 500px;
+    order: 1; 
 
     @media (min-width: 760px) {
       max-width: 50%;
       margin-bottom: 0;
+      order: 2; 
     }
   }
 
@@ -69,30 +86,19 @@
     span {
       color: $accent-color;
     }
+
+    @media (min-width: 760px) {
+      font-size: $font-size-lg-desktop;
+    }
   }
 
   &__description {
-    font-size: $font-size-base;
+    font-size: $font-size-base; 
     margin-bottom: $margin-base;
-  }
+    line-height: 1.6; 
 
-  &__features {
-    list-style-type: none;
-    padding: 0;
-    margin-bottom: $margin-base;
-
-    li {
-      font-size: $font-size-base;
-      margin-bottom: 10px;
-      position: relative;
-      padding-left: 20px;
-
-      &:before {
-        content: '✔️';
-        position: absolute;
-        left: 0;
-        color: $accent-color;
-      }
+    @media (min-width: 760px) {
+      font-size: $font-size-base-desktop;
     }
   }
 
@@ -101,14 +107,115 @@
     color: $primary-color;
     border: none;
     border-radius: $border-radius;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: $font-size-base;
-    text-transform: uppercase;
+    padding: 15px 30px; 
+    font-size: $font-size-sm;
     transition: background-color 0.3s ease;
 
     &:hover {
       background-color: darken($accent-color, 10%);
+    }
+
+    @media (min-width: 760px) {
+      font-size: $font-size-base; // Adjust font size for tablets and desktops
+    }
+  }
+}
+
+.product-overview {
+  display: flex;
+  flex-direction: column;
+  color: $text-color;
+  padding: 40px 10px;
+  text-align: left;
+  margin-top: 40px;
+
+  @media (min-width: 760px) {
+    flex-direction: row;
+  }
+
+  &__left {
+    flex: 1;
+    display: flex;
+    align-items: left;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+
+    @media (min-width: 760px) {
+      align-items: flex-start; // Ensure it aligns to the top on larger screens
+    }
+  }
+
+  &__header {
+    font-size: $font-size-base;
+    color: $accent-color;
+
+    @media (min-width: 760px) {
+      font-size: $font-size-lg-desktop; // Adjust font size for tablets and desktops
+      text-align: left; // Ensure it aligns to the left on larger screens
+    }
+  }
+
+  &__right {
+    flex: 2;
+    padding-left: 0;
+
+    @media (min-width: 760px) {
+      padding-left: 40px; // Add padding on the left for larger screens
+    }
+  }
+
+  &__description {
+    font-size: $font-size-base;
+    margin-bottom: 40px;
+    line-height: 1.6;
+
+    @media (min-width: 760px) {
+      font-size: $font-size-base-desktop; 
+    }
+  }
+
+  &__sections {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    line-height: 1.6rem;
+    font-size: $font-size-sm;
+
+    @media (min-width: 760px) {
+      flex-direction: row;
+      justify-content: space-around;
+      font-size: $font-size-base-desktop;
+    }
+
+    &__section {
+      text-align: left;
+      margin-bottom: 20px;
+
+
+      h3 {
+        font-size: $font-size-lg;
+        margin-bottom: 10px;
+        color: $heading-color;
+        margin-bottom: 20px;
+
+        @media (min-width: 760px) {
+          font-size: $font-size-lg-desktop;
+        }
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          font-size: $font-size-base;
+          margin-bottom: 10px;
+
+          @media (min-width: 760px) {
+            font-size: $font-size-base-desktop; // Adjust font size for tablets and desktops
+          }
+        }
+      }
     }
   }
 }
