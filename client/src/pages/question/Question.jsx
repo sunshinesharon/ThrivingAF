@@ -132,7 +132,6 @@ const QuestionForm = () => {
       if (activeStep < steps.length - 1) {
         setActiveStep(activeStep + 1);
       } else {
-        // Format the answers
         const formattedAnswers = {
           question_and_answer: steps.map((question, index) => ({
             id: index + 1,
@@ -141,7 +140,6 @@ const QuestionForm = () => {
           })),
         };
   
-        // Post to the API
         try {
           const reorderJson = (input) => {
             const desiredOrder = [
@@ -160,15 +158,12 @@ const QuestionForm = () => {
             ];
         
             const orderedOutput = {};
-        
-            // Add keys that are in the desired order
             desiredOrder.forEach(key => {
                 if (key in input) {
                     orderedOutput[key] = input[key];
                 }
             });
-        
-            // Add any remaining keys that were not in the desired order
+      
             Object.keys(input).forEach(key => {
                 if (!(key in orderedOutput)) {
                     orderedOutput[key] = input[key];
@@ -256,7 +251,12 @@ const QuestionForm = () => {
         </Overlay>
       )}
       <StyledPaper>
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h4" 
+        gutterBottom
+        sx={{ fontFamily: "League Spartan, sans-serif", 
+          fontSize: { xs: "24px", md: "30px" },
+            textAlign: "center",
+        }}>
           {steps[activeStep]}
         </Typography>
         <TextField
@@ -273,11 +273,17 @@ const QuestionForm = () => {
               color: "white",
               backgroundColor: "rgba(255, 255, 255, 0.1)",
               borderRadius: "10px",
+              fontFamily: "Open Sauce, sans-serif",
+              fontSize: { xs: "16px", md: "20px" },
+              textAlign: "center",
             },
           }}
           InputLabelProps={{
             style: {
               color: "white",
+              fontFamily: "Open Sauce, sans-serif",
+              fontSize: { xs: "16px", md: "20px" },
+              textAlign: "center",
             },
           }}
         />

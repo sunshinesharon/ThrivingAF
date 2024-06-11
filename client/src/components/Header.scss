@@ -7,7 +7,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: $padding-base;
+  padding: 20px 20px;
+    height: 60px;
   background-color: #131314;
   z-index: 1000;
 
@@ -32,7 +33,7 @@
     .header__link {
       text-decoration: none;
       color: #545454;
-      font-family: "Roboto", sans-serif;
+      font-family: $primary-font;
       font-size: 14px; 
       padding: 0 10px;
       margin: 0 5px;
@@ -62,11 +63,11 @@
   }
 
   &__menu-icon {
-    display: block; // Show menu icon by default
+    display: block;
     cursor: pointer;
 
     img {
-      width: 30px; // Adjust size as needed
+      width: 30px; 
       height: auto;
     }
   }
@@ -150,7 +151,4 @@
     }
   }
 
-  @media (max-width: 760px) {
-    width: 93%;
-  }
 }

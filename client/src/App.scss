@@ -1,4 +1,4 @@
-@import "./styles/variables";
+@import "../src/styles/global";
 
 * {
   margin: 0;
@@ -7,26 +7,24 @@
 }
 
 body {
-  background-color: $primary-color; 
-  color: #fff; 
+  background-color: $primary-color;
+  color: #fff;
   margin: 0;
   padding: 0;
-  font-family: Roboto;
+  font-family: $primary-font;
   cursor: pointer;
 }
 
 .app {
-  padding-top: 60px; // Adjust according to the height of the header
+  padding-top: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #131314;
-  padding: 0; 
+  background-color: $primary-color;
+  padding: 0;
   margin: 0;
-  font-family: sans-serif;
-  
 
   &__content {
     display: flex;
@@ -35,18 +33,18 @@ body {
     text-align: center;
 
     @media (min-width: 760px) {
-      flex-direction: row-reverse; // Display image on the right for tablets and above
+      flex-direction: row-reverse; 
       justify-content: space-between;
       text-align: left;
       padding: 0 40px;
     }
 
     @media (min-width: 1280px) {
-      max-width: 1200px;
+      max-width: 1450px;
       margin: 0 auto;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: left;
       padding: 0 60px;
     }
   }
@@ -55,9 +53,8 @@ body {
     margin-bottom: $margin-base;
     max-width: 500px;
 
-
     @media (min-width: 760px) {
-      max-width: 50%;
+      max-width: 100%;
       margin-bottom: 0;
     }
     @media (max-width: 765px) {
@@ -69,21 +66,33 @@ body {
   }
 
   &__title {
-    font-family: "League Spartan", sans-serif;
+    font-family: $header-font;
     font-size: $font-size-xl;
     color: $heading-color;
     margin-bottom: $margin-base;
+
+    @media (min-width: 760px) {
+      font-size: $font-size-xl-desktop;
+    }
   }
 
   &__subtitle {
-    font-family: "Roboto", sans-serif;
+    font-family: $primary-font;
     font-size: $font-size-base;
     color: $text-color;
     margin-bottom: $margin-base;
+
+    @media (min-width: 760px) {
+      font-size: $font-size-base-desktop;
+    }
   }
 
   &__or {
     margin: $padding-base 0;
+    @media (min-width: 760px) {
+      text-align: center;
+    }
+
   }
 
   &__email-input,
@@ -95,9 +104,13 @@ body {
     border-radius: $border-radius;
     width: 100%;
     max-width: 300px;
-    font-family: "Roboto", sans-serif;
+    font-family: $primary-font;
     font-size: $font-size-base;
-    box-sizing: border-box; // Ensure the padding doesn't affect the width
+    box-sizing: border-box; 
+
+    @media (min-width: 760px) {
+      font-size: $font-size-base-desktop;
+    }
   }
 
   &__email-input {
@@ -118,7 +131,7 @@ body {
 
   &__google-button {
     background-color: #fff;
-    color: #131314;
+    color: $primary-color;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -156,6 +169,7 @@ body {
     display: block;
     width: 100%;
     margin-bottom: $margin-base;
+    padding-top: 60px;
 
     img {
       width: 100%;
@@ -164,7 +178,7 @@ body {
 
     @media (min-width: 760px) {
       display: block;
-      max-width: 50%;
+      max-width: 100%;
       margin-bottom: 0;
 
       img {

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import HomeGif from "../../assets/images/taf.gif";
 import GoogleIcon from "../../assets/images/google-icon.png"; 
-import axios from "axios"; // Import axios for HTTP requests
+import axios from "axios"; 
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { app } from "../../firebase";
 import Header from "../../components/Header";

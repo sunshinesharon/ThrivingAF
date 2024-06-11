@@ -18,7 +18,6 @@ const ResponsePage = () => {
   };
 
   const handleSubmitFeedback = () => {
-    // Handle feedback submission logic here
     console.log({ vote, feedback });
     setFeedback(""); 
   };
@@ -66,24 +65,53 @@ const ResponsePage = () => {
         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)",
       }}
     >
-      <Typography variant="h6" gutterBottom>
+      <Typography 
+      variant="h6" 
+      gutterBottom
+      sx={{
+      fontFamily: "League Spartan, sans-serif",
+      fontSize: { xs: "22px", md: "24px" }, 
+      textAlign: "center",
+      }}
+      >
         {data.title || "Marketing Plan"}
       </Typography>
       {Object.keys(data).map((key, index) => {
         if (key !== "title") {
           return (
             <Box key={index} sx={{ marginBottom: "10px" }}>
-              <Typography variant="h6" gutterBottom>
+              <Typography 
+              variant="h6" 
+              gutterBottom
+              sx={{
+                fontFamily: "League Spartan, sans-serif",
+                fontSize: { xs: "20px", md: "22px" }, 
+              }}
+            >
                 {key.replace(/_/g, " ").replace(/^\w/, (c) => c.toUpperCase())}
               </Typography>
               {Array.isArray(data[key]) ? (
                 data[key].map((item, idx) => (
-                  <Typography key={idx} variant="body1" paragraph>
+                  <Typography 
+                  key={idx} 
+                  variant="body1" 
+                  paragraph
+                  sx={{
+                    fontFamily: "Open Sauce, sans-serif", 
+                    fontSize: { xs: "14px", md: "16.5px" }, 
+                  }}>
                     {item}
                   </Typography>
                 ))
               ) : (
-                <Typography variant="body1" paragraph>
+                <Typography 
+                variant="body1" 
+                paragraph
+                sx={{
+                  fontFamily: "Open Sauce, sans-serif", 
+                  fontSize: { xs: "14px", md: "16.5px" }, 
+                }}
+              >
                   {data[key]}
                 </Typography>
               )}
@@ -121,7 +149,15 @@ const ResponsePage = () => {
         }}
       >
         <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
-          <Typography variant="h4" gutterBottom>
+          <Typography 
+          variant="h4" 
+          gutterBottom
+          sx={{
+            fontFamily: "League Spartan, sans-serif",
+            fontSize: { xs: "28px", md: "32px" }, 
+            textAlign: "center", 
+          }}
+        >
             {data.title || "Marketing Plan"}
           </Typography>
           <IconButton onClick={handleDownload} sx={{ color: "white" }}>

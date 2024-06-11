@@ -1,17 +1,20 @@
 @import './variables';
 @import './mixins';
-@import './fonts'; 
-
-p {
-  font-family: 'Chewy', sans-serif;
-}
+@import './fonts';
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: $primary-font;
   background-color: $primary-color;
   color: $text-color;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
+}
+
+p {
+  font-family: $title-font;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $header-font;
 }

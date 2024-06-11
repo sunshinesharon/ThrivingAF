@@ -21,9 +21,7 @@ const Header = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    
     setIsLoggedIn(false);
-    
     navigate("/");
   };
 
@@ -44,13 +42,10 @@ const Header = () => {
           Why Thriving
         </a>
         <a href="/pricing" className="header__link">
-          Pricing
+          Beta
         </a>
         <a href="/freelance-hub" className="header__link">
           Freelance Hub
-        </a>
-        <a href="/contact" className="header__link">
-          Contact
         </a>
         {isLoggedIn && (
           <button
@@ -74,13 +69,10 @@ const Header = () => {
               Why Thriving
             </a>
             <a href="/pricing" className="header__overlay-link">
-              Pricing
+              Beta
             </a>
             <a href="/freelance-hub" className="header__overlay-link">
               Freelance Hub
-            </a>
-            <a href="/contact" className="header__overlay-link">
-              Contact
             </a>
             {isLoggedIn && (
               <button
