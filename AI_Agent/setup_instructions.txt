@@ -8,6 +8,8 @@ Note: The AI Agents packages are compatible only with Python3.
 - python3 -m pip install pyyaml
 - python3 -m pip install Flask-Cors
 
+Once you have installed the above, cd src within AI_agents and run python3 main.py. 
+
 ## Activating the Virtual Environment (Please do this step if you aren't able to install the above packages or if you're facing version conflicts)
 Ensure that you activate the virtual environment before running the application:
  - virtualenv ai-agents-env
