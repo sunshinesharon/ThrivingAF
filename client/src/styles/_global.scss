@@ -1,5 +1,10 @@
 @import './variables';
 @import './mixins';
+@import './fonts'; 
+
+p {
+  font-family: 'Chewy', sans-serif;
+}
 
 body {
   font-family: 'Roboto', sans-serif;
