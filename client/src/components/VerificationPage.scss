@@ -16,7 +16,7 @@
     text-align: center;
 
     @media (min-width: 760px) {
-      flex-direction: row-reverse; // Display image on the right for tablets and above
+      flex-direction: row-reverse; 
       justify-content: space-between;
       text-align: left;
     }
