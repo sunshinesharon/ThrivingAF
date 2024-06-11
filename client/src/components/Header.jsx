@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Header.scss";
-import Logo from "../assets/images/favicon.png"; // Ensure this path matches the actual location of the image
-import MenuIcon from "../assets/images/menu-icon.png"; // Ensure this path matches the actual location of the image
-import CloseIcon from "../assets/images/close-icon.png"; // Ensure this path matches the actual location of the image
+import Logo from "../assets/images/favicon.png";
+import MenuIcon from "../assets/images/menu-icon.png"; 
+import CloseIcon from "../assets/images/close-icon.png"; 
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -21,13 +21,10 @@ const Header = () => {
   };
 
   const handleLogout = () => {
-    // Clear user data from local storage/session storage
     localStorage.removeItem("token");
     
-    // Update login state
     setIsLoggedIn(false);
     
-    // Redirect to the login page or home page
     navigate("/");
   };
 
