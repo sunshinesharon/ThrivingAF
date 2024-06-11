@@ -1,30 +1,32 @@
-import React from 'react';
-import Header from './components/Header';
-import AuthButton from './components/AuthButton';
-import './App.scss';
-import HomeImage from './assets/images/T.png'; // Ensure this path matches the actual location of the image
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
+import VerificationPage from "./components/VerificationPage";
+import "./App.scss";
+
+import Login from "./pages/login/Login";
+import Question from "./pages/question/Question";
+import Header from "./components/Header";
+import ResponsePage from "./pages/response/ResponsePage";
+import Pricing from "./pages/pricing/Pricing";
+import WhyThriving from "./pages/why-thriving/WhyThriving";
+import FreelancerHub from "./pages/freelancer-hub/FreelancerHub";
+import ContactPage from "./pages/contact/ContactPage";
 const App = () => {
   return (
-    <div className="app">
+    <Router>
       <Header />
-      <div className="app__content">
-        <div className="app__image-section">
-          <img src={HomeImage} alt="Team High Five" />
-        </div>
-        <div className="app__text-section">
-          <h1 className="app__title">Hi, Freelancers!</h1>
-          <p className="app__subtitle">Let's get your Marketing Plan thriving.</p>
-          <AuthButton provider="google" />
-          <p className="app__or">or</p>
-          <input type="email" placeholder="work@email.com" className="app__email-input" />
-          <button className="app__email-button" disabled>Continue with email</button>
-          <p className="app__terms">
-            By signing up, you agree to the <a href="#">Terms of Use</a>, <a href="#">Privacy Notice</a>, and <a href="#">Cookie Notice</a>.
-          </p>
-        </div>
-      </div>
-    </div>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/verify" element={<VerificationPage />} />
+        <Route path="/question" element={<Question />} />
+        <Route path="/response" element={<ResponsePage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/freelance-hub" element={<FreelancerHub />} />
+        <Route path="/why-thriving" element={<WhyThriving />} />
+      </Routes>
+    </Router>
   );
 };
 
