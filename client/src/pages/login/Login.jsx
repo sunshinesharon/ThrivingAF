@@ -62,12 +62,12 @@ const Login = () => {
       <Header />
       <div className="app__content">
         <div className="app__image-section">
-          <img src={HomeGif} alt="Team High Five" />
+          <img src={HomeGif} alt="Thriving As Freelancers" />
         </div>
         <div className="app__text-section">
-          <h1 className="app__title">Hi, Freelancers!</h1>
+          <h1 className="app__title">Market like a Boss</h1>
           <p className="app__subtitle">
-            Let's get your Marketing Plan thriving.
+            Let's get your Marketing Plan Thriving!
           </p>
           <button className="app__google-button" onClick={handleGoogleSignIn}>
             <img

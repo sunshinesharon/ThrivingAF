@@ -77,26 +77,6 @@ const ResponsePage = () => {
           {data.executive_summary}
         </Typography>
       </Box>
-      {Object.keys(data)
-        .filter((key) => key !== "title" && key !== "executive_summary")
-        .map((key, index) => (
-          <Box key={index} sx={{ marginBottom: "10px" }}>
-            <Typography variant="h6" gutterBottom>
-              {key.replace(/_/g, " ").replace(/^\w/, (c) => c.toUpperCase())}
-            </Typography>
-            {Array.isArray(data[key]) ? (
-              data[key].map((item, idx) => (
-                <Typography key={idx} variant="body1" paragraph>
-                  {item}
-                </Typography>
-              ))
-            ) : (
-              <Typography variant="body1" paragraph>
-                {data[key]}
-              </Typography>
-            )}
-          </Box>
-        ))}
     </Box>
   );
 
