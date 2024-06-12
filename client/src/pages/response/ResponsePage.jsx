@@ -74,7 +74,7 @@ const ResponsePage = () => {
       textAlign: "center",
       }}
       >
-        {data.title || "Marketing Plan"}
+        {"Marketing Plan"}
       </Typography>
       {Object.keys(data).map((key, index) => {
         if (key !== "title") {
