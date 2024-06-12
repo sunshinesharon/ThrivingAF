@@ -24,33 +24,59 @@ const ResponsePage = () => {
 
   const handleDownload = () => {
     const doc = new jsPDF();
-
+  
     doc.setFontSize(20);
-    doc.text(data.title || "Marketing Plan", 10, 10);
+    let cursorY = 10;
+    doc.text(data.title || "Marketing Plan", 10, cursorY);
+    cursorY += 10; 
     doc.setFontSize(12);
-
+  
     const addSection = (title, content) => {
-      doc.addPage();
-      doc.text(title, 10, 10);
+     if (cursorY >= 280) {
+        doc.addPage();
+        cursorY = 10; 
+      }
+  
+      doc.text(title, 10, cursorY);
+      cursorY += 10; 
+  
       if (Array.isArray(content)) {
-        content.forEach((item, index) => {
-          doc.text(item, 10, 20 + index * 10);
+        content.forEach(item => {
+          let lines = doc.splitTextToSize(item, 190);
+          lines.forEach(line => {
+            if (cursorY >= 280) {
+              doc.addPage();
+              cursorY = 10; 
+            }
+            doc.text(line, 10, cursorY);
+            cursorY += 10;
+          });
+          cursorY += 5; 
         });
       } else {
-        doc.text(content, 10, 20);
+        let lines = doc.splitTextToSize(content, 190); 
+        lines.forEach(line => {
+          if (cursorY >= 280) {
+            doc.addPage();
+            cursorY = 10; 
+          }
+          doc.text(line, 10, cursorY);
+          cursorY += 10;
+        });
+        cursorY += 5;
       }
     };
-
+  
     for (const key in data) {
       if (key !== "title") {
         const sectionTitle = key.replace(/_/g, " ").replace(/^\w/, (c) => c.toUpperCase());
         addSection(sectionTitle, data[key]);
       }
     }
-
+  
     doc.save("marketing_plan.pdf");
-  };
-
+  };  
+  
   const renderContent = () => (
     <Box
       sx={{
@@ -74,7 +100,7 @@ const ResponsePage = () => {
       textAlign: "center",
       }}
       >
-        {data.title || "Marketing Plan"}
+        {"Marketing Plan"}
       </Typography>
       {Object.keys(data).map((key, index) => {
         if (key !== "title") {
