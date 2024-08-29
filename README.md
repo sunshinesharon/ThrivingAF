@@ -6,7 +6,7 @@ Market Like a Boss.
 ![ThrivingAF Demo](src/assets/images/Features.gif)
 
 ## Overview
-ThrivingAF is an AI-powered Marketing tool designed to empower Freelancers and  solopreneurs to craft compelling personal brands and execute effective marketing strategies.
+ThrivingAF is an GenAI powered Marketing tool designed to empower Freelancers and  solopreneurs to craft compelling personal brands and execute effective marketing strategies.
 
 ### Problem
 
